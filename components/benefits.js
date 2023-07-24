@@ -29,7 +29,7 @@ const Benefits = (props) => {
             data.imgPos === "right" ? "lg:justify-end" : ""
           }`}>
           <div>
-            <div className="flex flex-col w-full mt-4">
+            <div className="flex flex-col w-full mt-4" id={data.id}>
               <h3 className="max-w-2xl mt-3 text-3xl font-bold leading-snug tracking-tight text-gray-800 lg:leading-tight lg:text-4xl dark:text-white">
                 {data.title}
               </h3>
@@ -57,9 +57,9 @@ function Benefit(props) {
   return (
     <>
       <div className="flex items-start mt-8 space-x-3">
-        <div className="flex items-center justify-center flex-shrink-0 mt-1 bg-indigo-500 rounded-md w-11 h-11 ">
+        <div className="flex items-center justify-center flex-shrink-0 mt-1 bg-gray-500 rounded-md w-11 h-11 ">
           {React.cloneElement(props.icon, {
-            className: "w-7 h-7 text-indigo-50",
+            className: "w-7 h-7 text-gray-50",
           })}
         </div>
         <div>

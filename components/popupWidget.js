@@ -51,8 +51,8 @@ const PopupWidget = () => {
       <Disclosure>
         {({ open }) => (
           <>
-            <Disclosure.Button className="fixed z-40 flex items-center justify-center transition duration-300 bg-indigo-500 rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-indigo-600 focus:bg-indigo-600 ease">
-              <span className="sr-only">Open Contact form Widget</span>
+            <Disclosure.Button className="fixed z-40 flex items-center justify-center transition duration-300 bg-gray-900 rounded-full shadow-lg right-5 bottom-5 w-14 h-14 focus:outline-none hover:bg-gray-500 focus:bg-gray-900 ease">
+              <span className="sr-only">打开联系我们</span>
               <Transition
                 show={!open}
                 enter="transition duration-200 transform ease"
@@ -105,10 +105,10 @@ const PopupWidget = () => {
               leave="transition duration-200 transform ease"
               leaveTo="opacity-0 translate-y-5">
               <Disclosure.Panel className=" flex flex-col  overflow-hidden left-0 h-full w-full sm:w-[350px] min-h-[250px] sm:h-[600px] border border-gray-300 dark:border-gray-800 bg-white shadow-2xl rounded-md sm:max-h-[calc(100vh-120px)]">
-                <div className="flex flex-col items-center justify-center h-32 p-5 bg-indigo-600">
-                  <h3 className="text-lg text-white">How can we help?</h3>
+                <div className="flex flex-col items-center justify-center h-32 p-5 bg-gray-900">
+                  <h3 className="text-lg text-white">联系我们</h3>
                   <p className="text-white opacity-50">
-                    We usually respond in a few hours
+                    我们收到您的需求或建议后，会尽快回复。
                   </p>
                 </div>
                 <div className="flex-grow h-full p-6 overflow-auto bg-gray-50 ">
@@ -138,21 +138,21 @@ const PopupWidget = () => {
                       <div className="mb-4">
                         <label
                           htmlFor="full_name"
-                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
-                          Full Name
+                          className="block mb-2 text-sm text-gray-900 dark:text-gray-400">
+                          联系人
                         </label>
                         <input
                           type="text"
                           id="full_name"
-                          placeholder="John Doe"
+                          placeholder="联系人姓名/公司名称"
                           {...register("name", {
                             required: "Full name is required",
                             maxLength: 80,
                           })}
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
+                          className={`w-full px-3 py-2 text-gray-900 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
                             errors.name
                               ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                              : "border-gray-300 focus:border-gray-900 ring-gray-100"
                           }`}
                         />
                         {errors.name && (
@@ -165,8 +165,8 @@ const PopupWidget = () => {
                       <div className="mb-4">
                         <label
                           htmlFor="email"
-                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
-                          Email Address
+                          className="block mb-2 text-sm text-gray-900 dark:text-gray-400">
+                          Email 地址
                         </label>
                         <input
                           type="email"
@@ -178,11 +178,11 @@ const PopupWidget = () => {
                               message: "Please enter a valid email",
                             },
                           })}
-                          placeholder="you@company.com"
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
+                          placeholder="使用您的常用邮箱"
+                          className={`w-full px-3 py-2 text-gray-900 placeholder-gray-300 bg-white border border-gray-300 rounded-md focus:outline-none focus:ring   ${
                             errors.email
                               ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                              : "border-gray-300 focus:border-gray-900 ring-gray-100"
                           }`}
                         />
 
@@ -196,8 +196,8 @@ const PopupWidget = () => {
                       <div className="mb-4">
                         <label
                           htmlFor="message"
-                          className="block mb-2 text-sm text-gray-600 dark:text-gray-400">
-                          Your Message
+                          className="block mb-2 text-sm text-gray-900 dark:text-gray-400">
+                          需求或建议
                         </label>
 
                         <textarea
@@ -206,11 +206,11 @@ const PopupWidget = () => {
                           {...register("message", {
                             required: "Enter your Message",
                           })}
-                          placeholder="Your Message"
-                          className={`w-full px-3 py-2 text-gray-600 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${
+                          placeholder="在这里写出需求或建议"
+                          className={`w-full px-3 py-2 text-gray-900 placeholder-gray-300 bg-white border border-gray-300 rounded-md h-28 focus:outline-none focus:ring   ${
                             errors.message
                               ? "border-red-600 focus:border-red-600 ring-red-100"
-                              : "border-gray-300 focus:border-indigo-600 ring-indigo-100"
+                              : "border-gray-300 focus:border-gray-900 ring-gray-100"
                           }`}
                           required></textarea>
                         {errors.message && (
@@ -222,7 +222,7 @@ const PopupWidget = () => {
                       <div className="mb-3">
                         <button
                           type="submit"
-                          className="w-full px-3 py-4 text-white bg-indigo-500 rounded-md focus:bg-indigo-600 focus:outline-none">
+                          className="w-full px-3 py-4 text-white bg-gray-500 rounded-md focus:bg-gray-900 focus:outline-none">
                           {isSubmitting ? (
                             <svg
                               className="w-5 h-5 mx-auto text-white animate-spin"
@@ -242,24 +242,10 @@ const PopupWidget = () => {
                                 d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
                             </svg>
                           ) : (
-                            "Send Message"
+                            "发送邮件"
                           )}
                         </button>
                       </div>
-                      <p
-                        className="text-xs text-center text-gray-400"
-                        id="result">
-                        <span>
-                          Powered by{" "}
-                          <a
-                            href="https://Web3Forms.com"
-                            className="text-gray-600"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                            Web3Forms
-                          </a>
-                        </span>
-                      </p>
                     </form>
                   )}
 
@@ -280,11 +266,11 @@ const PopupWidget = () => {
                           />
                         </svg>
                         <h3 className="py-5 text-xl text-green-500">
-                          Message sent successfully
+                          您已成功发送
                         </h3>
                         <p className="text-gray-700 md:px-3">{Message}</p>
                         <button
-                          className="mt-6 text-indigo-600 focus:outline-none"
+                          className="mt-6 text-gray-900 focus:outline-none"
                           onClick={() => reset()}>
                           Go back
                         </button>
@@ -313,7 +299,7 @@ const PopupWidget = () => {
                       </h3>
                       <p className="text-gray-700 md:px-3">{Message}</p>
                       <button
-                        className="mt-6 text-indigo-600 focus:outline-none"
+                        className="mt-6 text-gray-900 focus:outline-none"
                         onClick={() => reset()}>
                         Go back
                       </button>
